@@ -124,6 +124,22 @@ h3 { font-size:calc(1.35rem * var(--hs)); margin-bottom:.35rem; }
 .stars { color:var(--accent); letter-spacing:.15em; margin-bottom:.6rem; }
 .quote footer { margin-top:1rem; font-weight:600; font-size:.9rem; }
 
+/* credentials */
+.cred { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+.cred h3 { color:var(--primary); margin-bottom:1rem; }
+.tl { list-style:none; padding:0; border-left:2px solid var(--line); }
+.tl li { padding:0 0 1.3rem 1.3rem; position:relative; }
+.tl li::before { content:""; position:absolute; left:-7px; top:.4rem; width:12px; height:12px; border-radius:50%; background:var(--primary); box-shadow:0 0 0 4px var(--tint); }
+.tl span { display:block; font-size:.82rem; font-weight:600; color:var(--accent-ink); letter-spacing:.05em; }
+.tl b { display:block; }
+.tl em { font-style:normal; color:var(--muted); font-size:.93rem; }
+.ticks { list-style:none; padding:0; display:grid; gap:.55rem; }
+.ticks li { padding-left:1.6rem; position:relative; color:var(--muted); font-size:.95rem; }
+.ticks li::before { content:"✓"; position:absolute; left:0; color:var(--primary); font-weight:700; }
+.pub { background:var(--bg); border:1px solid var(--line); border-left:3px solid var(--primary); border-radius:12px; padding:1.1rem 1.3rem; margin-bottom:1rem; }
+.pub span { font-size:.75rem; text-transform:uppercase; letter-spacing:.12em; font-weight:600; color:var(--accent-ink); }
+.pub p { margin-top:.3rem; font-size:.95rem; }
+
 /* faq */
 .faq { max-width:780px; margin-inline:auto; }
 .faq details { border-bottom:1px solid var(--line); padding:1.15rem 0; }
@@ -172,7 +188,7 @@ footer.site .copy { border-top:1px solid #3a2525; margin-top:2.5rem; padding-top
   .links a:not(.btn) { display:none; }
   [data-h="split"] .hero .wrap, .doc, .contact { grid-template-columns:1fr; }
   [data-h="split"] .hero-photo { max-width:360px; }
-  .cards, .ba, .quotes { grid-template-columns:1fr; }
+  .cards, .ba, .quotes, .cred { grid-template-columns:1fr; }
   .stats .wrap { grid-template-columns:repeat(2,1fr); }
   footer.site .cols { grid-template-columns:1fr 1fr; }
   .switcher { width:calc(100% - 36px); }
@@ -186,14 +202,14 @@ footer.site .copy { border-top:1px solid #3a2525; margin-top:2.5rem; padding-top
 </svg>
 
 <div class="util"><div class="wrap">
-  <span>📍 Clinic address, City &nbsp;·&nbsp; 🕘 Mon–Sat, 10 AM – 7 PM</span>
-  <span><a href="#">📞 +91 XXXXX XXXXX</a> &nbsp;·&nbsp; <a href="#">Instagram</a></span>
+  <span>📍 Thane, Maharashtra &nbsp;·&nbsp; 🗓 Consultations by appointment</span>
+  <span><a href="tel:+919326140776">📞 +91 93261 40776</a> &nbsp;·&nbsp; <a href="mailto:bracingsmiles@gmail.com">✉ bracingsmiles@gmail.com</a></span>
 </div></div>
 
 <header class="nav"><div class="wrap">
   <a href="#" class="brand"><span>Bracing <b>Smiles</b><small>Dr. Jennifer Mascarenhas · MDS</small></span></a>
   <nav class="links">
-    <a href="#about">About</a><a href="#treatments">Treatments</a><a href="#smiles">Smiles</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a>
+    <a href="#about">About</a><a href="#treatments">Specialities</a><a href="#credentials">Credentials</a><a href="#smiles">Smiles</a><a href="#faq">FAQ</a>
     <a href="#contact" class="btn">Book appointment</a>
   </nav>
 </div></header>
@@ -202,11 +218,11 @@ footer.site .copy { border-top:1px solid #3a2525; margin-top:2.5rem; padding-top
   <div class="hero-bg"></div>
   <div class="wrap">
     <div>
-      <span class="eyebrow">Orthodontist · MDS</span>
-      <h1>Straight teeth.<br>Confident smiles.</h1>
-      <p class="lead">Braces and clear aligners for children, teens and adults, planned by an orthodontic specialist and built around your smile.</p>
-      <div class="cta"><a href="#contact" class="btn">Book a consultation</a><a href="#treatments" class="btn btn-ghost">Explore treatments</a></div>
-      <div class="trust"><div><b>MDS</b>Orthodontics</div><div><b>XX+</b>Smiles treated</div><div><b>4.9★</b>Patient rating</div></div>
+      <span class="eyebrow">Orthodontist · Thane</span>
+      <h1 id="hl">Straight teeth.<br>Confident smiles.</h1>
+      <p class="lead">Dr. Jennifer Mascarenhas, B.D.S., M.D.S. (Orthodontics &amp; Dentofacial Orthopedics), creates evidence-based treatment plans for patients of every age, from braces and clear aligners to cleft care and surgical orthodontics.</p>
+      <div class="cta"><a href="#contact" class="btn">Book a consultation</a><a href="#treatments" class="btn btn-ghost">Specialities</a></div>
+      <div class="trust"><div><b>M.D.S.</b>Orthodontics</div><div><b>Gold</b>Medalist</div><div><b>All ages</b>Kids · Teens · Adults</div></div>
     </div>
     <div class="hero-photo img"><svg><use href="#tooth"/></svg></div>
   </div>
@@ -217,32 +233,64 @@ footer.site .copy { border-top:1px solid #3a2525; margin-top:2.5rem; padding-top
   <div>
     <span class="eyebrow">Meet your orthodontist</span>
     <h2>Dr. Jennifer Mascarenhas</h2>
-    <p class="muted">MDS, Orthodontics &amp; Dentofacial Orthopaedics. She treats crowding, spacing, overbites, underbites and crossbites, and plans every case for a healthy bite and long-term stability as well as a beautiful smile.</p>
-    <div class="badges"><span class="badge"><b>MDS</b> Orthodontics</span><span class="badge"><b>BDS</b> University</span><span class="badge"><b>Certified</b> Aligner provider</span></div>
+    <p class="muted">A proactive, methodical MDS orthodontist with a clinically sound approach to diagnosis and treatment planning. Dr. Jennifer manages craniofacial deformities, comprehensive fixed mechanotherapy, dentofacial orthopedics, fixed functional therapy, cleft care and clear aligner therapy, with experience in complex malocclusions and interdisciplinary care.</p>
+    <p class="muted" style="margin-top:1rem">She is committed to transparent communication and patient comfort, and to delivering predictable, functional and aesthetic results.</p>
+    <div class="badges"><span class="badge"><b>M.D.S.</b> KLE VKIDS, Belagavi · Gold medalist</span><span class="badge"><b>B.D.S.</b> MGM DCH, Navi Mumbai</span><span class="badge"><b>Speaks</b> English · Hindi · Marathi · Konkani</span></div>
     <a href="#contact" class="btn">Book with Dr. Jennifer</a>
   </div>
 </div></section>
 
 <section class="stats"><div class="wrap">
-  <div><b>XX+</b><span>Years of training</span></div>
-  <div><b>XXX+</b><span>Happy patients</span></div>
-  <div><b>XX</b><span>Aligner cases</span></div>
-  <div><b>4.9★</b><span>Google rating</span></div>
+  <div><b>Gold</b><span>Medalist, M.D.S.</span></div>
+  <div><b>9</b><span>Specialities</span></div>
+  <div><b>3</b><span>Research studies</span></div>
+  <div><b>4</b><span>Languages spoken</span></div>
 </div></section>
 
 <section id="treatments" class="section surface"><div class="wrap">
-  <div class="head c"><span class="eyebrow">Treatments</span><h2>Orthodontic care for every age</h2><p class="muted">A clear plan, honest timelines and transparent costs before treatment begins.</p></div>
+  <div class="head c"><span class="eyebrow">Specialities</span><h2>Orthodontic care for every age</h2><p class="muted">A clear, evidence-based plan with honest timelines before treatment begins.</p></div>
   <div class="cards">
-    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 8v8M12 8v8M17 8v8M3 12h18"/></svg></div><h3>Metal braces</h3><p>Reliable, efficient and proven for even the most complex corrections.</p><a href="#">Learn more →</a></article>
-    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="2"/><circle cx="8" cy="12" r="1.5"/><circle cx="16" cy="12" r="1.5"/></svg></div><h3>Ceramic braces</h3><p>Tooth-coloured brackets that blend in, with the control of metal.</p><a href="#">Learn more →</a></article>
-    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 10c0-3 3-5 8-5s8 2 8 5-3 7-8 7-8-4-8-7z"/></svg></div><h3>Clear aligners</h3><p>Removable, nearly invisible trays for discreet straightening.</p><a href="#">Learn more →</a></article>
-    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6"/></svg></div><h3>Early orthodontics</h3><p>Guiding jaw growth in children to prevent bigger problems later.</p><a href="#">Learn more →</a></article>
-    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/></svg></div><h3>Adult orthodontics</h3><p>It's never too late. Discreet options that fit a working life.</p><a href="#">Learn more →</a></article>
-    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg></div><h3>Retainers</h3><p>Keeping your new smile in place for the long term.</p><a href="#">Learn more →</a></article>
+    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 8v8M12 8v8M17 8v8M3 12h18"/></svg></div><h3>Metal &amp; ceramic braces</h3><p>Proven fixed braces in classic metal or discreet tooth-coloured ceramic.</p></article>
+    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="2"/><circle cx="8" cy="12" r="1.5"/><circle cx="16" cy="12" r="1.5"/></svg></div><h3>Self-ligating braces</h3><p>Clip-based bracket systems that need no elastic ties, for smoother adjustments.</p></article>
+    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 14c2-6 14-6 16 0"/><path d="M8 10l-2-4M16 10l2-4"/></svg></div><h3>Fixed functional therapy</h3><p>Appliances that correct jaw discrepancies in growing patients.</p></article>
+    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6"/></svg></div><h3>Adult orthodontics</h3><p>Discreet options that fit a working life. It's never too late.</p></article>
+    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 6-7 11-7 11z"/></svg></div><h3>Cleft care</h3><p>Orthodontic care for cleft lip and palate, including Naso-Alveolar Moulding (NAM).</p></article>
+    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12c3-4 6-4 9 0s6 4 9 0"/><path d="M3 17c3-4 6-4 9 0s6 4 9 0"/></svg></div><h3>Myofunctional therapy</h3><p>Retraining tongue, lip and facial muscles to support a healthy bite.</p></article>
+    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 10c0-3 3-5 8-5s8 2 8 5-3 7-8 7-8-4-8-7z"/></svg></div><h3>Clear aligner therapy</h3><p>Removable, nearly invisible aligners for discreet straightening.</p></article>
+    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12h6M12 9v6"/></svg></div><h3>Orthognathic surgery</h3><p>Surgical orthodontics, planned with maxillofacial surgeons for jaw correction.</p></article>
+    <article class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8 12h8"/></svg></div><h3>Occlusal splint therapy</h3><p>Splints that relieve TMJ discomfort and protect teeth from grinding.</p></article>
   </div>
 </div></section>
 
-<section id="smiles" class="section"><div class="wrap">
+
+<section id="credentials" class="section"><div class="wrap">
+  <div class="head c"><span class="eyebrow">Credentials</span><h2>Education, training &amp; research</h2></div>
+  <div class="cred">
+    <div>
+      <h3>Education</h3>
+      <ol class="tl">
+        <li><span>2023 – 2026</span><b>M.D.S., Orthodontics &amp; Dentofacial Orthopedics</b><em>KLE VKIDS, Belagavi · <strong>Gold medalist</strong></em></li>
+        <li><span>2017 – 2022</span><b>B.D.S., Bachelor of Dental Surgery</b><em>MGM Dental College &amp; Hospital, Navi Mumbai</em></li>
+      </ol>
+      <h3 style="margin-top:2rem">Certifications &amp; accolades</h3>
+      <ul class="ticks">
+        <li>2nd place, poster presentation, 27th Scientific Convention, KLE VKIDS, Belagavi</li>
+        <li>In-Office Aligners: A Digital Hands-On Workshop, KLE DCH Bangalore</li>
+        <li>Orthodontic Biomechanics, CORE, Belagavi</li>
+        <li>Workshop on MSE Appliance, MM DCH, Belagavi</li>
+        <li>CBCT Workshop, KLE, Belagavi</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Research &amp; publications</h3>
+      <div class="pub"><span>Thesis</span><p>Electromyographic analysis of orbicularis oris and buccinator muscles in individuals with crowding, spacing and normal occlusion: a cross-sectional study.</p></div>
+      <div class="pub"><span>Systematic review &amp; meta-analysis</span><p>Effects of different adhesive agents on enamel colour in patients undergoing orthodontic treatment. <em>To be published, J Contemp Orthod, 2026.</em></p></div>
+      <div class="pub"><span>Questionnaire study</span><p>Awareness and knowledge of mini-implants (temporary anchorage devices, TADs) among dentists.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="smiles" class="section surface"><div class="wrap">
   <div class="head"><span class="eyebrow">Smile gallery</span><h2>Real results</h2><p class="muted">Before &amp; after cases, shared with patient consent.</p></div>
   <div class="ba">
     <figure><div class="pair"><div class="img" data-l="Before"></div><div class="img" data-l="After"></div></div><figcaption>Crowding · Metal braces · 18 months</figcaption></figure>
@@ -251,22 +299,15 @@ footer.site .copy { border-top:1px solid #3a2525; margin-top:2.5rem; padding-top
   </div>
 </div></section>
 
-<section id="reviews" class="section surface"><div class="wrap">
-  <div class="head c"><span class="eyebrow">Patient stories</span><h2>Kind words from patients</h2><p class="muted">Sample reviews: replace with real Google reviews.</p></div>
-  <div class="quotes">
-    <blockquote class="quote"><div class="stars">★★★★★</div><p>Dr. Jennifer explained every step clearly and my aligner treatment finished right on time.</p><footer>Patient name</footer></blockquote>
-    <blockquote class="quote"><div class="stars">★★★★★</div><p>My daughter actually looked forward to her appointments. Gentle, patient and very professional.</p><footer>Parent name</footer></blockquote>
-    <blockquote class="quote"><div class="stars">★★★★★</div><p>I got braces as an adult and wish I'd done it sooner. Love my smile now.</p><footer>Patient name</footer></blockquote>
-  </div>
-</div></section>
 
 <section id="faq" class="section"><div class="wrap">
   <div class="head c"><span class="eyebrow">FAQ</span><h2>Common questions</h2></div>
   <div class="faq">
-    <details open><summary>At what age should my child first see an orthodontist?</summary><p>An early check around age 7 helps spot jaw or bite issues while they're easiest to guide.</p></details>
-    <details><summary>Braces or clear aligners: which is right for me?</summary><p>It depends on your bite and lifestyle. We'll go through both options at your consultation.</p></details>
-    <details><summary>How long does treatment take?</summary><p>Most cases take 12–24 months; your plan will include a clear timeline.</p></details>
-    <details><summary>Do braces hurt?</summary><p>Expect mild soreness for a few days after adjustments, which is easily managed.</p></details>
+    <details open><summary>At what age should my child first see an orthodontist?</summary><p>An early check around age 7 helps spot jaw or bite problems while they are easiest to guide, often with functional or myofunctional therapy.</p></details>
+    <details><summary>Braces or clear aligners: which is right for me?</summary><p>It depends on your bite, the complexity of the case and your lifestyle. Both options are explained at your consultation.</p></details>
+    <details><summary>Am I too old for braces?</summary><p>No. Healthy teeth can be moved at any age, and adult orthodontics offers discreet options such as ceramic braces and aligners.</p></details>
+    <details><summary>How long does treatment take?</summary><p>Most cases take 12–24 months. Your plan includes a clear timeline before you start.</p></details>
+    <details><summary>Do you treat cleft lip and palate patients?</summary><p>Yes. Cleft care, including Naso-Alveolar Moulding (NAM) for infants, is one of Dr. Jennifer's specialities.</p></details>
   </div>
 </div></section>
 
@@ -274,39 +315,40 @@ footer.site .copy { border-top:1px solid #3a2525; margin-top:2.5rem; padding-top
 
 <section id="contact" class="section"><div class="wrap contact">
   <div>
-    <span class="eyebrow">Contact</span><h2>Visit the clinic</h2>
+    <span class="eyebrow">Contact</span><h2>Book a consultation</h2>
     <div class="info">
-      <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><p><b>Address</b><br><span class="muted">Clinic name, street, city</span></p></div>
-      <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><p><b>Phone / WhatsApp</b><br><span class="muted">+91 XXXXX XXXXX</span></p></div>
-      <div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><p><b>Hours</b><br><span class="muted">Mon–Sat, 10 AM – 7 PM · Sunday closed</span></p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><p><b>Location</b><br><span class="muted">Thane, Maharashtra</span></p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><p><b>Phone / WhatsApp</b><br><a href="tel:+919326140776">+91 93261 40776</a></p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><p><b>Email</b><br><a href="mailto:bracingsmiles@gmail.com">bracingsmiles@gmail.com</a></p></div>
     </div>
   </div>
-  <form onsubmit="event.preventDefault()">
+  <form id="bk">
     <h3>Request an appointment</h3>
-    <input placeholder="Full name"><input placeholder="Phone number">
-    <select><option>Treatment of interest</option><option>Braces</option><option>Clear aligners</option><option>Child check-up</option><option>Not sure</option></select>
-    <textarea rows="3" placeholder="Message (optional)"></textarea>
-    <button class="btn" type="submit">Send request</button>
+    <input name="n" placeholder="Full name" required><input name="ph" placeholder="Phone number">
+    <select name="t"><option>Treatment of interest</option><option>Braces (metal / ceramic / self-ligating)</option><option>Clear aligners</option><option>Child / functional therapy</option><option>Cleft care</option><option>Jaw surgery / orthognathic</option><option>TMJ / splint</option><option>Not sure</option></select>
+    <textarea name="m" rows="3" placeholder="Message (optional)"></textarea>
+    <button class="btn" type="submit">Send on WhatsApp</button>
   </form>
 </div></section>
 
 <footer class="site"><div class="wrap">
   <div class="cols">
-    <div><h4>Bracing Smiles</h4><p>Specialist orthodontic care by Dr. Jennifer Mascarenhas, MDS.</p></div>
-    <div><h4>Explore</h4><a href="#about">About</a><a href="#smiles">Smiles</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div>
-    <div><h4>Treatments</h4><a href="#">Braces</a><a href="#">Clear aligners</a><a href="#">Early orthodontics</a><a href="#">Retainers</a></div>
-    <div><h4>Contact</h4><p>Clinic address<br>+91 XXXXX XXXXX<br>email@bracingsmiles.com</p></div>
+    <div><h4>Bracing Smiles</h4><p>Specialist orthodontic care by Dr. Jennifer Mascarenhas, B.D.S., M.D.S. (Orthodontics &amp; Dentofacial Orthopedics).</p></div>
+    <div><h4>Explore</h4><a href="#about">About</a><a href="#credentials">Credentials</a><a href="#smiles">Smiles</a><a href="#faq">FAQ</a></div>
+    <div><h4>Treatments</h4><a href="#treatments">Braces</a><a href="#treatments">Clear aligners</a><a href="#treatments">Cleft care</a><a href="#treatments">Orthognathic surgery</a></div>
+    <div><h4>Contact</h4><p>Thane, Maharashtra<br><a href="tel:+919326140776">+91 93261 40776</a><a href="mailto:bracingsmiles@gmail.com">bracingsmiles@gmail.com</a></p></div>
   </div>
   <div class="copy">© 2026 Bracing Smiles · Dr. Jennifer Mascarenhas</div>
 </div></footer>
 
-<a class="wa" href="#" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.4z"/></svg></a>
+<a class="wa" href="https://wa.me/919326140776" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.4z"/></svg></a>
 
 <!-- PREVIEW SWITCHER (removed in final build) -->
 <div class="switcher" id="sw">
   <button class="x" title="Minimise" onclick="this.parentElement.classList.toggle('min')">–</button>
   <h5>Palette</h5><div class="row" data-k="p"></div>
   <h5>Fonts</h5><div class="row" data-k="f"></div>
+  <h5>Headline</h5><div class="row" data-k="t"></div>
   <h5>Hero layout</h5><div class="row" data-k="h"></div>
   <div class="code" id="code"></div>
 </div>
@@ -314,15 +356,18 @@ footer.site .copy { border-top:1px solid #3a2525; margin-top:2.5rem; padding-top
 const OPTS = {
   p: [["ivory","1 Ivory & Gold",["#5e0000","#b8925a","#f7efe6"]],["blush","2 Blush Rose",["#5e0000","#d4a29c","#fbf2f1"]],["sage","3 Sage",["#5e0000","#7d8f6e","#eef1ea"]],["stone","4 Stone & Charcoal",["#5e0000","#2b2b2b","#f0edea"]],["teal","5 Deep Teal",["#5e0000","#2f6f6a","#eef5f4"]]],
   f: [["elegant","A Cormorant + Inter"],["classic","B Playfair + DM Sans"],["modern","C Poppins"]],
-  h: [["split","Split + arch photo"],["full","Full-width banner"],["center","Centered"]]
+  h: [["split","Split + arch photo"],["full","Full-width banner"],["center","Centered"]],
+  t: [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"]]
 };
+const HL = {"1":"Straight teeth.<br>Confident smiles.","2":"Brace yourself for<br>a beautiful smile.","3":"Embrace the smile<br>you deserve.","4":"Bracing smiles,<br>one bite at a time.","5":"Small adjustments.<br>Life-changing smiles.","6":"Better bites.<br>Brighter smiles.","7":"Science-led smiles<br>for every age.","8":"Your smile,<br>perfectly aligned."};
 const q = new URLSearchParams(location.search);
-const state = { p:q.get("p")||"ivory", f:q.get("f")||"elegant", h:q.get("h")||"split" };
+const state = { p:q.get("p")||"ivory", f:q.get("f")||"elegant", h:q.get("h")||"split", t:q.get("t")||"1" };
 function apply(){
   for (const k in state) document.documentElement.dataset[k] = state[k];
+  document.getElementById("hl").innerHTML = HL[state.t];
   document.querySelectorAll(".switcher .row").forEach(r => r.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === state[r.dataset.k])));
   const lab = k => OPTS[k].find(o => o[0]===state[k])[1].split(" ")[0];
-  document.getElementById("code").textContent = `Your pick: Palette ${lab("p")} · Font ${lab("f")} · Hero ${state.h}`;
+  document.getElementById("code").textContent = `Your pick: Palette ${lab("p")} · Font ${lab("f")} · Headline ${state.t} · Hero ${state.h}`;
   history.replaceState(null, "", "?" + new URLSearchParams(state));
 }
 document.querySelectorAll(".switcher .row").forEach(r => {
@@ -334,6 +379,11 @@ document.querySelectorAll(".switcher .row").forEach(r => {
   });
 });
 apply();
+document.getElementById("bk").addEventListener("submit", e => {
+  e.preventDefault(); const f = e.target;
+  const t = `Hello Dr. Jennifer, I'd like to book a consultation.%0AName: ${encodeURIComponent(f.n.value)}%0APhone: ${encodeURIComponent(f.ph.value)}%0AInterest: ${encodeURIComponent(f.t.value)}%0A${encodeURIComponent(f.m.value)}`;
+  window.open("https://wa.me/919326140776?text=" + t, "_blank");
+});
 </script>
 </body>
 </html>
