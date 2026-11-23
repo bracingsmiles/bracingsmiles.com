@@ -49,10 +49,13 @@ h3 { font-size:calc(1.35rem * var(--hs)); margin-bottom:.35rem; }
 
 /* utility bar + nav */
 .util { background:var(--primary); color:#fff; font-size:.83rem; }
-.util .wrap { display:flex; justify-content:space-between; gap:1rem; padding:.45rem 0; flex-wrap:wrap; }
+.util .wrap { display:flex; justify-content:space-between; gap:.2rem 1rem; padding:.45rem 0; flex-wrap:wrap; }
 .util a { color:#fff; }
+.u-grp { display:flex; flex-wrap:wrap; align-items:center; }
+.u-grp > * + *::before { content:"·"; margin:0 .6rem; opacity:.7; }
 .nav { position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
-.nav .wrap { display:flex; align-items:center; justify-content:space-between; height:72px; }
+.nav .wrap { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:72px; }
+.brand > span { white-space:nowrap; }
 .brand { display:flex; align-items:center; gap:.6rem; font-family:var(--fh); font-size:calc(1.55rem * var(--hs)); font-weight:700; color:var(--text); }
 .brand small { display:block; font-family:var(--fb); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:500; margin-top:-2px; }
 .brand b { color:var(--primary); }
@@ -168,6 +171,17 @@ footer.site .copy { border-top:1px solid #3a2525; margin-top:2.5rem; padding-top
   .stats .wrap { grid-template-columns:repeat(2,1fr); }
   footer.site .cols { grid-template-columns:1fr 1fr; }
 }
+@media (max-width:640px) {
+  .u-hide { display:none !important; }
+  .util .wrap { justify-content:center; padding:.4rem 0; }
+  .nav .wrap { min-height:64px; }
+  .brand { gap:.5rem; font-size:1.2rem; }
+  .brand img { height:40px; }
+  .brand small { font-size:.56rem; letter-spacing:.08em; }
+  .sm-hide { display:none; }
+  .links .btn { padding:.55rem 1.1rem; font-size:.88rem; }
+  footer.site .cols { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
@@ -177,15 +191,15 @@ footer.site .copy { border-top:1px solid #3a2525; margin-top:2.5rem; padding-top
 </svg>
 
 <div class="util"><div class="wrap">
-  <span>📍 Thane, Maharashtra &nbsp;·&nbsp; 🗓 Consultations by appointment</span>
-  <span><a href="tel:+919326140776">📞 +91 93261 40776</a> &nbsp;·&nbsp; <a href="mailto:bracingsmiles@gmail.com">✉ bracingsmiles@gmail.com</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/bracingsmiles" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/drjennifermascarenhas" target="_blank" rel="noopener">LinkedIn</a></span>
+  <span class="u-grp u-hide"><span>📍 Thane, Maharashtra</span><span>🗓 Consultations by appointment</span></span>
+  <span class="u-grp"><a href="tel:+919326140776">📞 +91 93261 40776</a><a class="u-hide" href="mailto:bracingsmiles@gmail.com">✉ bracingsmiles@gmail.com</a><a href="https://www.instagram.com/bracingsmiles" target="_blank" rel="noopener">Instagram</a><a class="u-hide" href="https://www.linkedin.com/in/drjennifermascarenhas" target="_blank" rel="noopener">LinkedIn</a></span>
 </div></div>
 
 <header class="nav"><div class="wrap">
   <a href="#" class="brand"><img src="assets/img/logo-mark.svg" alt="Bracing Smiles logo" width="66" height="60"><span>Bracing <b>Smiles</b><small>Dr. Jennifer Mascarenhas · MDS</small></span></a>
   <nav class="links">
     <a href="#about">About</a><a href="#treatments">Specialities</a><a href="#credentials">Credentials</a><a href="#faq">FAQ</a>
-    <a href="#contact" class="btn">Book appointment</a>
+    <a href="#contact" class="btn">Book<span class="sm-hide">appointment</span></a>
   </nav>
 </div></header>
 
